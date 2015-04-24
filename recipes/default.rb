@@ -40,6 +40,10 @@ chef_gem 'kitchen-docker' do
   version '2.0.0'
 end
 
+chef_gem 'kitchen-openstack' do
+  version '1.8.0'
+end
+
 # Temporary workaround until we reliably use a newer version of ChefDK
 chef_gem 'chefspec' do
   version '4.1.1'
