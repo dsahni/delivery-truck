@@ -21,7 +21,7 @@ if node['delivery']['change']['stage'] == 'acceptance'
       cwd cookbook[:path]
       command "kitchen test"
       environment('PATH' => ENV['PATH'],
-                  'KITCHEN_YAML' => '.kitchen.docker.yml')
+                  'KITCHEN_YAML' => '.kitchen.openstack.yml')
       only_if { has_kitchen_tests?(cookbook[:path]) }
     end
   end
