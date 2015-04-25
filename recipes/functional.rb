@@ -19,7 +19,7 @@ if node['delivery']['change']['stage'] == 'acceptance'
   all_cookbooks.each do |cookbook|
     execute "functional_kitchen_#{cookbook[:name]}" do
       cwd cookbook[:path]
-      command "kitchen test"
+      command "chef exec kitchen test -l debug"
       environment('PATH' => ENV['PATH'],
                   'KITCHEN_YAML' => ".kitchen.#{node['delivery-truck']['kitchen_driver']}.yml")
       only_if { has_kitchen_tests?(cookbook[:path]) }
